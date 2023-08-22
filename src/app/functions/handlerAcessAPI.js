@@ -18,8 +18,7 @@ const getUserAuthenticated = (users, user) => {
 } 
 
 const getUsers = (user) => {
-    const authenticatedUser = users.find(u => u.email === user.email && u.password === user.password);
-    return authenticatedUser;
+    return users
 }
 
 export { getUsers, getUserAuthenticated };
