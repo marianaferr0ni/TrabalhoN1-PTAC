@@ -26,3 +26,16 @@ li a {
 li a:hover {
     background-color: #cdbbbb;
 }
+button{
+    background-color: #817a8a;
+    color: white;
+    border: none;
+    padding: 14px 16px 14px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+button:hover{
+    background-color: #cdbbbb;
+}

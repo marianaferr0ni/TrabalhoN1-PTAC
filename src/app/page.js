@@ -44,7 +44,7 @@ export default function Login() {
               onChange={(e) => { setUser({ ...user, password: e.target.value }) }}
               required>
             </input>
-            <button>Entrar</button>
+            <button id="login">Entrar</button>
           </form>
       </div>
       <ToastContainer />

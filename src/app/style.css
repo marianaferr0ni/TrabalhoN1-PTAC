@@ -78,7 +78,7 @@ button:hover{
         width: 300px;
         position: absolute;
         top: 20%;
-        left: 20%;
+        left: 19%;
         background-color: #fffeea;
     }
     h1{
@@ -113,7 +113,7 @@ button:hover{
         border-radius: 3px;
         margin-bottom: 15px;
     }
-    button{
+    button#login{
         width: 100%!important;
         cursor: pointer;  
         background: #817a8a;
@@ -126,7 +126,7 @@ button:hover{
         border-radius: 5px;
         transition: all 0.2s linear;
     }
-    button:hover{
+    button#login:hover{
         background: #cdbbbb;
     }
     .login{
