@@ -1,5 +1,3 @@
-
-
 export const metadata = {
   title: 'Register users',
   description: 'Project for class PTAC',
