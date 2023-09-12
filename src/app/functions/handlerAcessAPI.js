@@ -8,13 +8,15 @@ const users = [
 ];
 
 
-const getUserAuthenticated = (users, user) => {
+const getUserAuthenticated = (user) => {
+    let userAuth = {}
     for (let i = 0; i < users.length; i++) {
-        if (users[i].email === user.email && users[i].password === user.password) {
-            return true; 
+        if(users[i].email === user.email && users[i].password === user.password) 
+        {
+            userAuth=users[i];
         }
     }
-    return false; 
+    return userAuth; 
 } 
 
 const getUsers = (user) => {
