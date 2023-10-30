@@ -2,15 +2,15 @@
 import { NextResponse } from "next/server";
 import { validateToken } from "./app/functions/validateToken";
 
-export const middleware = (request) => {
+export const middleware = async (request) => {
 
     const token = request.cookies.get('token')?.value;
     const urlLogin = new URL('/', request.url);
     const urlDash = new URL('/pages/dashboard', request.url)
     const urlRegister = new URL('/pages/register', request.url)
     const urlAlter = new URL('/pages/alter', request.url)
-    const isTokenValidated = validateToken(token);
-
+    const isTokenValidated = await validateToken(token);
+    
     if (!isTokenValidated || !token) {
         if (request.nextUrl.pathname === '/pages/dashboard') {
             return NextResponse.redirect(urlLogin);
