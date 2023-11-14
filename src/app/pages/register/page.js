@@ -7,13 +7,13 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { postUser } from '@/app/functions/handlerAcessAPI';
 
-export default async function Register() {
+export default function Register() {
     const [user, setUser] = useState({
         name: '',
         email: '',
         password: ''
     });
-    const { push } = useRouter;
+    const { push } = useRouter();
 
     const submitForm = async (event) => {
         event.preventDefault();
@@ -38,13 +38,13 @@ export default async function Register() {
                 <div className="form">
                     <form action="" onSubmit={submitForm}>
                         <label>Nome:</label>
-                        <input type="text" required onChange={(event) => { setUser({ user, name: event.target.value })}}/>
+                        <input type="text" required onChange={(event) => { setUser({ ...user, name: event.target.value })}}/>
 
                         <label>E-mail:</label>
-                        <input type="email" required onChange={(event) => { setUser({ user, email: event.target.value })}}/>
+                        <input type="email" required onChange={(event) => { setUser({ ...user, email: event.target.value })}}/>
 
                         <label>Senha:</label>
-                        <input type="password" required onChange={(event) => { setUser({ user, password: event.target.value })}}/>
+                        <input type="password" required onChange={(event) => { setUser({ ...user, password: event.target.value })}}/>
 
                         <input type="submit" value="Cadastrar" />
                     </form>

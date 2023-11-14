@@ -19,7 +19,7 @@ function Header()
                 <li><a href='/'>Home</a></li>
                 <li><a href='/pages/alter'>Alterar</a></li>
                 <li><a href='/pages/register'>Cadastrar</a></li>
-                <li><button onClick={handlerRemoveCookies}>Sair</button></li>
+                <li><button onClick={handlerRemoveCookies} id="sair">Sair</button></li>
             </ul>
         </header>
     )

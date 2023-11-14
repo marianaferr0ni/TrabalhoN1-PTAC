@@ -9,13 +9,13 @@ export default async function Dashboard() {
         <div className="dashboard">
             <Header />
             <h1>Dashboard</h1>
-            <div className="container">
+            <div className="tudo">
                     {users?.map((user, index) =>
                     <div key={index} className="card">
                         <div className="cardzinho">
                             <img src="../exemplo.png"/>
-                            <p>{user.name}</p>
-                            <p>{user.email}</p>
+                            <p className="name">{user.name}</p>
+                            <p className="email">{user.email}</p>
                         </div>
                     </div>
                     )}

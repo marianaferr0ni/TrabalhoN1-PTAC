@@ -15,7 +15,7 @@ const getUserAuthenticated = async (user) => {
 
 const getUsers = async (user) => {
     try{
-        const responseOfApi = await fetch(url + "/users", {
+        const responseOfApi = await fetch(url + "/users", {cache:"no-cache"}, {
             next: { revalidate: 10}
         });
         const listUsers = responseOfApi.json()
@@ -34,7 +34,9 @@ const postUser = async (user) => {
             body: JSON.stringify(user)
         });
         const userSave = await responseOfApi.json();
+        console.log(userSave)
         return userSave;
+    
     }
     catch{
         return null

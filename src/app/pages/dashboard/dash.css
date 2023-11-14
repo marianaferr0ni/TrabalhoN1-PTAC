@@ -11,20 +11,19 @@
     justify-content: space-around;
     margin-right: 2%;
     margin-left: 2%;
+    margin-bottom: 2%;
 }
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-.cardzinho {
-    padding: 2px 16px;
-}
-img{
-    height: 200px;
-    width: 200px;
-}
-.container{
+.tudo{
     margin-left: 5%;
     margin-right: 5%;
+}
+img{
+    position: relative;
+    height: 200px;
+    width: 200px;
 }
 h1{
     text-align: center;
