@@ -10,7 +10,6 @@ export default async function Dashboard() {
             <Header />
             <h1>Dashboard</h1>
             <div className="container">
-                <Suspense>
                     {users?.map((user, index) =>
                     <div key={index} className="card">
                         <div className="cardzinho">
@@ -20,7 +19,6 @@ export default async function Dashboard() {
                         </div>
                     </div>
                     )}
-                </Suspense>
             </div>
         </div>
     );

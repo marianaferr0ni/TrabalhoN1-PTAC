@@ -10,7 +10,6 @@ const getUserAuthenticated = async (user) => {
         body: JSON.stringify(user)
     }); 
     const userAuth = await responseOfApi.json();
-    console.log(userAuth)
     return userAuth;
 } 
 
@@ -42,7 +41,7 @@ const postUser = async (user) => {
     }
 }
 
-const updateUser = async (user, id) =>{
+/*const updateUser = async (user, id) =>{
     try{
         const responseOfApi = await fetch(`${url}/user/${id}`, {
             method: 'PUT',
@@ -52,5 +51,5 @@ const updateUser = async (user, id) =>{
     catch{
 
     }
-}
+}*/
 export { getUsers, getUserAuthenticated, postUser };
