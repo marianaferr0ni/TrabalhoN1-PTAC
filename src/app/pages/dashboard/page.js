@@ -1,6 +1,7 @@
 import { getUsers } from "@/app/functions/handlerAcessAPI";
 import Header from "@/app/components/Header";
 import './dash.css'
+import { Suspense } from "react";
 
 export default async function Dashboard() {
    const users = await getUsers();
@@ -9,7 +10,8 @@ export default async function Dashboard() {
             <Header />
             <h1>Dashboard</h1>
             <div className="container">
-                {users?.map((user, index) =>
+                <Suspense>
+                    {users?.map((user, index) =>
                     <div key={index} className="card">
                         <div className="cardzinho">
                             <img src="../exemplo.png"/>
@@ -17,7 +19,8 @@ export default async function Dashboard() {
                             <p>{user.email}</p>
                         </div>
                     </div>
-                )}
+                    )}
+                </Suspense>
             </div>
         </div>
     );

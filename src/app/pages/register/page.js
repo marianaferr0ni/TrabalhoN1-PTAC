@@ -1,15 +1,34 @@
 'use client'
-import React from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Header from '@/app/components/Header';
-import './register.css'
+import './register.css';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { postUser } from '@/app/functions/handlerAcessAPI';
 
 export default async function Register() {
-    const submitForm = (e) => {
-        e.preventDefault();
-        toast.success("Usuário cadastrado com sucesso!!")
-    }
+    const [user, setUser] = useState({
+        name: '',
+        email: '',
+        password: ''
+    });
+    const { push } = useRouter;
+
+    const submitForm = async (event) => {
+        event.preventDefault();
+        try{
+            await postUser(user);
+            await new Promise((resolve) => {
+                toast.success("Usuário cadastrado com sucesso!!")
+                setTimeout(resolve, 5000)
+            });
+            return push("/pages/dashboard")
+        }
+        catch{
+            return toast.error("Erro!")
+        }
+    };
 
     return (
         <div className='register'>
