@@ -9,7 +9,8 @@ export default async function Dashboard() {
         <div className="dashboard">
             <Header />
             <h1>Dashboard</h1>
-            <div className="tudo">
+            <Suspense fallback={<p>Carregando...</p>}>
+                <div className="tudo">
                     {users?.map((user, index) =>
                     <div key={index} className="card">
                         <div className="cardzinho">
@@ -19,7 +20,8 @@ export default async function Dashboard() {
                         </div>
                     </div>
                     )}
-            </div>
+                </div>
+            </Suspense>
         </div>
     );
 };
