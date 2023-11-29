@@ -1,10 +1,12 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Header from '@/app/components/Header';
 import './alter.css'
 import { updateUser } from '@/app/functions/handlerAcessAPI';
+import { getUser } from '@/app/functions/handlerAcessAPI';
+import { useRouter } from 'next/navigation';
 
 export default function Alter({ params }) {
     const [user, setUser] = useState({
@@ -13,6 +15,14 @@ export default function Alter({ params }) {
         password: ''
     });
     const { push } = useRouter();
+
+    useEffect(() => {
+        const findUser = async () => {
+            const userFind = await getUser(params.id);
+            setUser({...user, name: userFind.name, email: userFind.email });
+        }
+        findUser();
+    },[])
 
     const updateForm = async (event) => {
         event.preventDefault();
