@@ -16,13 +16,13 @@ export default function Alter({ params }) {
     });
     const { push } = useRouter();
 
-    useEffect(() => {
+    /*useEffect(() => {
         const findUser = async () => {
             const userFind = await getUser(params.id);
             setUser({...user, name: userFind.name, email: userFind.email });
         }
         findUser();
-    },[])
+    },[])*/
 
     const updateForm = async (event) => {
         event.preventDefault();
