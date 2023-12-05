@@ -8,13 +8,13 @@ export default async function Lista({ users }) {
         <div className="tudo">
             {users?.map((user, index) =>
                 <div key={index} className="card">  
-                    <Link href={`/pages/alter/${user.id}`}>      
-                        <div className="cardzinho">
+                    <div className="cardzinho">
+                        <Link href={`/pages/alter/${user.id}`}>    
                             <img src="../exemplo.png"/>
                             <p className="name">{user.name}</p>
                             <p className="email">{user.email}</p>
-                        </div>
-                    </Link>
+                        </Link>    
+                    </div>
                 </div>
             )}
         </div>
